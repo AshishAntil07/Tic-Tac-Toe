@@ -1,20 +1,18 @@
-const U1name = document.getElementById("U1NameTaker");
-const U2name = document.getElementById("U2NameTaker");
-const errorPrinter = document.getElementById("errorRecogniser");
-const nameTakeContainer = document.querySelector(".nameInputForm");
+const U1name = document.querySelector("#U1NameTaker");
+const U2name = document.querySelector("#U2NameTaker");
 const form = document.querySelector('.mainForm');
-const P1name = document.getElementById("U1Name");
-const P2name = document.getElementById("U2Name");
-const winPrinter = document.getElementById("winDeclarer");
-const newGame = document.getElementById("newGameBtn");
+const P1name = document.querySelector("#U1Name");
+const P2name = document.querySelector("#U2Name");
+const winner = document.querySelector("#winDeclarer");
+const newGame = document.querySelector("#newGameBtn");
 const U1Box = document.querySelector(".U1");
 const U2Box = document.querySelector(".U2");
-const PABtn = document.getElementById("playAgainBtn");
-const U1score = document.getElementById("U1Score");
-const U2score = document.getElementById("U2Score");
+const PABtn = document.querySelector("#playAgainBtn");
+const U1score = document.querySelector("#U1Score");
+const U2score = document.querySelector("#U2Score");
 const Boxes = document.querySelector('.mainTicTacContainer').childNodes;
 let turn=1, P1Score=0, P2Score=0, toRemove=[], moves=0;
-document.querySelector('.GameContainer').style.height = nameTakeContainer.style.height = `${screen.availHeight}px`;
+document.querySelector('.GameContainer').style.height = document.querySelector(".nameInputForm").style.height = `${screen.height}px`;
 
 form.addEventListener('submit', e => {
   e.preventDefault();
@@ -22,11 +20,11 @@ form.addEventListener('submit', e => {
     alert("Player's name cannot be larger than 12 characters.");
     return;
   }else{
-    window.location.replace("#'");
+    window.location.href="#'";
   }
   P1name.innerHTML = U1name.value;
   P2name.innerHTML = U2name.value;
-  startNew()
+  startNew();
 })
 
 Boxes.forEach((elem, index) => index%2===0?toRemove.push(elem):0)
@@ -40,17 +38,17 @@ const removeListeners = () => {
 
 let checkWin = () => {
   if(Boxes[0].circle === true && Boxes[1].circle === true && Boxes[2].circle === true || Boxes[3].circle === true && Boxes[4].circle === true && Boxes[5].circle === true || Boxes[6].circle === true && Boxes[7].circle  === true && Boxes[8].circle === true || Boxes[0].circle === true && Boxes[3].circle === true && Boxes[6].circle === true || Boxes[0].circle === true && Boxes[4].circle === true && Boxes[8].circle === true || Boxes[2].circle === true && Boxes[4].circle === true && Boxes[6].circle === true || Boxes[1].circle === true && Boxes[4].circle === true && Boxes[7].circle === true || Boxes[2].circle === true && Boxes[5].circle === true && Boxes[8].circle === true){
-    winPrinter.innerHTML = `${P1name.innerHTML} Wins!`;
+    winner.innerHTML = `${P1name.innerHTML} Wins!`;
     PABtn.style.display = "block";
     U1score.innerHTML = `Score: ${++P1Score}`;
     removeListeners()
   }else if(Boxes[0].cross === true && Boxes[1].cross === true && Boxes[2].cross === true || Boxes[3].cross === true && Boxes[4].cross === true && Boxes[5].cross === true || Boxes[6].cross === true && Boxes[7].cross  === true && Boxes[8].cross === true || Boxes[0].cross === true && Boxes[3].cross === true && Boxes[6].cross === true || Boxes[0].cross === true && Boxes[4].cross === true && Boxes[8].cross === true || Boxes[2].cross === true && Boxes[4].cross === true && Boxes[6].cross === true || Boxes[1].cross === true && Boxes[4].cross === true && Boxes[7].cross === true || Boxes[2].cross === true && Boxes[5].cross === true && Boxes[8].cross === true){
-    winPrinter.innerHTML = `${P2name.innerHTML} Wins!`;
+    winner.innerHTML = `${P2name.innerHTML} Wins!`;
     PABtn.style.display = "block";
     U2score.innerHTML = `Score: ${++P2Score}`;
     removeListeners()
   }else if(moves === 9){
-    winPrinter.innerHTML = `Match Tie!`;
+    winner.innerHTML = `Match Tie!`;
     PABtn.style.display = "block";
     removeListeners()
   }
@@ -89,7 +87,7 @@ function clickCheck(){
 const startNew = newGame => {
   debugger;
   moves = 0;
-  winPrinter.innerHTML = ``;
+  winner.innerHTML = ``;
   turn = parseInt(Math.random()*2);
   PABtn.style.display = "none";
   clickCheck()
@@ -97,8 +95,7 @@ const startNew = newGame => {
   if(newGame){
     P1Score = 0;
     P2Score = 0;
-    U1score.innerHTML = `Score: ${P1Score}`;
-    U2score.innerHTML = `Score: ${P2Score}`;
+    U1score.innerHTML = U2score.innerHTML = `Score: 0`;
   }
 
   for(let i=0; i<Boxes.length; i++){
