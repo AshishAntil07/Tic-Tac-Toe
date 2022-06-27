@@ -1,4 +1,4 @@
-# <img src='https://github.com/AshishAntil07/AshishAntil07/blob/main/4pointedStar.svg' height='25px' width='25px'> Tic Tac Toe
+<table align='center' border='0'><tr><td><img src='https://github.com/AshishAntil07/AshishAntil07/blob/home/5pointedStar.svg' height='65px' width='65px'></td> <td><h1>Tic Tac Toe</h1></td></tr></table>
 Here's an offline multiplayer Tic Tac Toe game for you to play with your friends!
 
 ## 📄 Instructions:
