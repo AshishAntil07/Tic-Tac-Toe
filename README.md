@@ -7,6 +7,12 @@ Here's an offline multiplayer Tic Tac Toe game for you to play with your friends
   <li>Enjoy the game!</li>
 </ul>
 
+## ✨ Features :
+<ul>
+  <li>Vision-friendly dark theme.</li>
+  <li>Multiplayer(sharing the same device) available.</li>
+</ul>
+
 ## 👁️ Preview :
 <img src='https://github.com/AshishAntil07/AshishAntil07/blob/Tic-Tac-Toe/TicTacToe.gif'>
 
