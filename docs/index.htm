@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="Tic Tac.css">
+    <link rel="shortcut icon" href="Pictures/Logo.png" type="image/x-icon">
+  </head>
+  <body>
+    <!-- <Name Input Form> -->
+    <div class="nameInputForm">
+      <form class="mainForm">
+        <h1 class = "formHead">Enter Player Name</h1>
+        <div class="PlayerInputContainer">
+          <input type="text" id = "U1NameTaker" placeholder = "Player1" required>
+          <input type="text" id = "U2NameTaker" placeholder = "Player2" required>
+        </div>
+        <button type="submit" id = "submitter" class="submitHelper">
+        </button>
+      </form>
+    </div>
+    <!-- </ Name Input Form> -->
+
+    <div class="GameContainer" id="'">
+      <div style="display:flex;">
+        <div class="U1">
+          <div style="display:flex;justify-content:space-between;align-items: center;">
+            <p id = "U1Name">Player 1</p>
+            <div class="symImgContainer">
+              <img src="Pictures/Tic Tac Circle.png" height = "50px" width = "50px" title = "Symbol" alt="Circle">
+            </div>
+          </div>
+          <div class="scoreBlock" id="U1Score">Score: 0</div>
+        </div>
+        <h1 id = "winDeclarer"></h1>
+        <div class="U2">
+          <div style="display:flex;justify-content:space-between;align-items: center;">
+            <p id = "U2Name">Player 2</p>
+            <div class="symImgContainer">
+              <img src="Pictures/Tic Tac Cross.png" height = "50px" width = "50px" title = "Symbol" alt="Cross">
+            </div>
+          </div>
+          <div class="scoreBlock" id="U2Score">Score: 0</div>
+        </div>
+      </div>
+      <button class = "playAgain" id="playAgainBtn"> Play Again </button>
+      <div class="centerAligner">
+        <div class="mainTicTacContainer">
+          <div class="mainTicTac"></div>
+          <div class="mainTicTac"></div>
+          <div class="mainTicTac"></div>
+          <div class="mainTicTac"></div>
+          <div class="mainTicTac"></div>
+          <div class="mainTicTac"></div>
+          <div class="mainTicTac"></div>
+          <div class="mainTicTac"></div>
+          <div class="mainTicTac"></div>
+        </div>
+      </div>
+      <div class="centerAligner">
+        <button id="newGameBtn"><span class="indexGiver">New Game</span></button>
+      </div>
+    </div>
+    <script src = "Tic Tac.js"></script>
+  </body>
+</html>
