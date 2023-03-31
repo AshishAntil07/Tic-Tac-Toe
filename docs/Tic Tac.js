@@ -10,22 +10,17 @@ const U2Box = document.querySelector(".U2");
 const PABtn = document.querySelector("#playAgainBtn");
 const U1score = document.querySelector("#U1Score");
 const U2score = document.querySelector("#U2Score");
-const Boxes = [...document.querySelector('.mainTicTacContainer').childNodes];
+const Boxes = [...document.querySelector('.mainTicTacContainer').children];
 let turn=1, P1Score=0, P2Score=0, moves=0;
 document.querySelector('.GameContainer').style.height = document.querySelector(".nameInputForm").style.height = `${screen.height}px`;
 
 form.addEventListener('submit', e => {
   e.preventDefault();
-  if(U1name.value.length > 12 || U2name.value.length > 12){
-    alert("Player's name cannot be larger than 12 characters.");
-    return
-  }else window.location.href="#'";
+  window.location.href="#'";
   P1name.innerHTML = U1name.value;
   P2name.innerHTML = U2name.value;
   startNew();
 })
-
-Boxes.forEach((elem, index) => index%2===0?elem.remove():0)
 
 const removeListeners = () => Boxes.forEach(box=>box.removeEventListener('click', boxFunc));
 
